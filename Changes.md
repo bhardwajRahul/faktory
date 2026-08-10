@@ -8,6 +8,7 @@ Changelog: Faktory || [Faktory Enterprise](https://github.com/contribsys/faktory
   in Redis. All queues are now prefixed with `q:` inside Redis.
 - **SECURITY** Clients could send malformed protocol requests which cause Faktory to crash, leading to a DDOS. Faktory now recovers any Go panics when processing commands.
 - **SECURITY** Running the bare `faktory` binary on Linux used `/tmp/redis.conf` to start Redis which an attacker could gain write access with a TOCTOU attack, leading to a misconfigured Redis. Faktory now writes `redis.conf` to the storage directory which is not world-writeable.
+- AMD64 build now uses `GOAMD64=v3` which requires a 2013+ Intel chip.
 
 ## 1.9.4
 
